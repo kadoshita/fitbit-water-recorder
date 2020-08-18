@@ -59,7 +59,10 @@ server.post('/', async (request, reply) => {
 
     if (body && body.amount) {
         const date = new Date();
-        const timestamp = date.toISOString().split('T')[0];
+        const y = date.getFullYear();
+        const m = date.getMonth() + 1;
+        const d = date.getDate();
+        const timestamp = `${y}-${('' + m).padStart(2, '0')}-${('' + d).padStart(2, '0')}`;
         const basic_token: string = envData.basic_token || FITBIT_API_BASIC_TOKEN || '';
         const bearer_token: string = envData.bearer_token || FITBIT_API_BEARER_TOKEN || '';
         const refresh_token: string = envData.refresh_token || FITBIT_REFRESH_TOKEN || '';
