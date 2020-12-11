@@ -71,7 +71,7 @@ server.post('/', async (request, reply) => {
                 'Authorization': `Bearer ${bearer_token}`
             }
         }).then(() => {
-            console.log(`[${date.toISOString()}] Log Water amount: ${body.amount} ml.`);
+            console.log(`[${date.toLocaleString()}] Log Water amount: ${body.amount} ml.`);
         }).catch(e => {
             if (e.response.data.errors[0].errorType === 'expired_token') {
                 console.log('refresh_token');

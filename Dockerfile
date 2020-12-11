@@ -9,4 +9,5 @@ COPY . .
 RUN npm run build
 EXPOSE 3000
 ENV FITBIT_API_TOKEN=""
+ENV TZ=Asia/Tokyo
 CMD [ "npm","start" ]
