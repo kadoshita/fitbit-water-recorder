@@ -94,7 +94,7 @@ server.post('/', async (request, reply) => {
                             'Authorization': `Bearer ${new_access_token}`
                         }
                     }).then(() => {
-                        console.log(`[${date.toISOString()}] Log Water amount: ${body.amount} ml.`);
+                        console.log(`[${date.toLocaleString()}] Log Water amount: ${body.amount} ml.`);
                     }).catch(e => {
                     });
                 }).catch(e => {
